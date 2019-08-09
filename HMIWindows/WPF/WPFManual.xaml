@@ -1,0 +1,224 @@
+﻿<Window x:Class="HMIWindows.WPFManual"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HMIWindows"
+        mc:Ignorable="d"
+            TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        WindowStyle="None"
+        Title="WPFManual" Height="700" Width="1250" Activated="Window_Activated"  Background="GhostWhite" Initialized="Window_Initialized">
+   
+    <Grid>
+        <Button Content="Main" HorizontalAlignment="Left" Margin="50,650,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="BtnMain_Click"/>
+        <Button Content="Manual" HorizontalAlignment="Left" Margin="200,650,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="BtnMannal_Click"/>
+        <Button Content="Auto" HorizontalAlignment="Left" Margin="350,650,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="BtnAuto_Click"/>
+        <Button Content="Signals" HorizontalAlignment="Left" Margin="500,650,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="BtnSignals_Click"/>
+        <Button Content="Alarm" HorizontalAlignment="Left" Margin="650,650,0,0" VerticalAlignment="Top" Width="90" Height="35" Click="BtnAlarm_Click"/>
+        <Label Content="=====手动窗口====" HorizontalAlignment="Left" Margin="550,0,0,0" VerticalAlignment="Top" Width="140" Height="30" Background="AliceBlue"/>
+        <TextBlock HorizontalAlignment="Left" Margin="1100,5,0,0" TextWrapping="Wrap" Text="与PLC通信状态：" VerticalAlignment="Top"/>
+        <Label Content="已断开" Background="Red" Name="labCommStu"   HorizontalAlignment="Left" Margin="1200,0,0,0"  VerticalAlignment="Top"/>
+        <!--气缸-->
+        <Grid>
+        <!--气缸1-13-->
+        <Label Content="伸出" HorizontalAlignment="Left" Margin="183,65,0,0" VerticalAlignment="Top"/>
+        <Label Content="缩回" HorizontalAlignment="Left" Margin="215,65,0,0" VerticalAlignment="Top"/>
+        <!--A1-->
+        <Label Content="A1 气缸" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A1" Content="伸出" HorizontalAlignment="Left" Margin="70,93,0,0" MouseDown="BtnOpen08A1_MouseDown" MouseUp="BtnOpen08A1_MouseUp" VerticalAlignment="Top" Width="50" />
+        <Button x:Name="btnClose08A1" Content="缩回" HorizontalAlignment="Left" Margin="125,93,0,0" MouseDown="BtnClose08A1_MouseDown" MouseUp="BtnClose08A1_MouseUp" VerticalAlignment="Top" Width="50" />
+        <Ellipse x:Name="ellOpen08A1" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,93,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A1" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,93,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A2-->
+        <Label Content="A2 气缸" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A2" Content="伸出" HorizontalAlignment="Left" Margin="70,123,0,0" MouseDown="BtnOpen08A2_MouseDown" MouseUp="BtnOpen08A2_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A2" Content="缩回" HorizontalAlignment="Left" Margin="125,123,0,0" MouseDown="BtnClose08A2_MouseDown" MouseUp="BtnClose08A2_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A2" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,123,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A2" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,123,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A3-->
+        <Label Content="A3 气缸" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A3" Content="伸出" HorizontalAlignment="Left" Margin="70,153,0,0" MouseDown="BtnOpen08A3_MouseDown" MouseUp="BtnOpen08A3_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A3" Content="缩回" HorizontalAlignment="Left" Margin="125,153,0,0" MouseDown="BtnClose08A3_MouseDown" MouseUp="BtnClose08A3_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A3" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,153,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A3" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,153,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A4-->
+        <Label Content="A4 气缸" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A4" Content="伸出" HorizontalAlignment="Left" Margin="70,183,0,0" MouseDown="BtnOpen08A4_MouseDown" MouseUp="BtnOpen08A4_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A4" Content="缩回" HorizontalAlignment="Left" Margin="125,183,0,0" MouseDown="BtnClose08A4_MouseDown" MouseUp="BtnClose08A4_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A4" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,183,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A4" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,183,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A5-->
+        <Label Content="A5 气缸" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A5" Content="伸出" HorizontalAlignment="Left" Margin="70,213,0,0" MouseDown="BtnOpen08A5_MouseDown" MouseUp="BtnOpen08A5_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A5" Content="缩回" HorizontalAlignment="Left" Margin="125,213,0,0" MouseDown="BtnClose08A5_MouseDown" MouseUp="BtnClose08A5_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A5" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,213,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A5" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,213,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A6-->
+        <Label Content="A6 气缸" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A6" Content="伸出" HorizontalAlignment="Left" Margin="70,243,0,0" MouseDown="BtnOpen08A6_MouseDown" MouseUp="BtnOpen08A6_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A6" Content="缩回" HorizontalAlignment="Left" Margin="125,243,0,0" MouseDown="BtnClose08A6_MouseDown" MouseUp="BtnClose08A6_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A6" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,243,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A6" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,243,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A7-->
+        <Label Content="A7 气缸" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A7" Content="伸出" HorizontalAlignment="Left" Margin="70,273,0,0" MouseDown="BtnOpen08A7_MouseDown" MouseUp="BtnOpen08A7_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A7" Content="缩回" HorizontalAlignment="Left" Margin="125,273,0,0" MouseDown="BtnClose08A7_MouseDown" MouseUp="BtnClose08A7_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A7" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,273,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A7" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,273,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A8-->
+        <Label Content="A8 气缸" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A8" Content="伸出" HorizontalAlignment="Left" Margin="70,303,0,0" MouseDown="BtnOpen08A8_MouseDown" MouseUp="BtnOpen08A8_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A8" Content="缩回" HorizontalAlignment="Left" Margin="125,303,0,0" MouseDown="BtnClose08A8_MouseDown" MouseUp="BtnClose08A8_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A8" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,303,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A8" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,303,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A9-->
+        <Label Content="A9 气缸" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A9" Content="伸出" HorizontalAlignment="Left" Margin="70,333,0,0" MouseDown="BtnOpen08A9_MouseDown" MouseUp="BtnOpen08A9_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A9" Content="缩回" HorizontalAlignment="Left" Margin="125,333,0,0" MouseDown="BtnClose08A9_MouseDown" MouseUp="BtnClose08A9_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A9" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,333,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A9" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,333,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A10-->
+        <Label Content="A10气缸" HorizontalAlignment="Left" Margin="10,360,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A10" Content="伸出" HorizontalAlignment="Left" Margin="70,363,0,0" MouseDown="BtnOpen08A10_MouseDown" MouseUp="BtnOpen08A10_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A10" Content="缩回" HorizontalAlignment="Left" Margin="125,363,0,0" MouseDown="BtnClose08A10_MouseDown" MouseUp="BtnClose08A10_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A10" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,363,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A10" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,363,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A11-->
+        <Label Content="A11气缸" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A11" Content="伸出" HorizontalAlignment="Left" Margin="70,393,0,0" MouseDown="BtnOpen08A11_MouseDown" MouseUp="BtnOpen08A11_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A11" Content="缩回" HorizontalAlignment="Left" Margin="125,393,0,0" MouseDown="BtnClose08A11_MouseDown" MouseUp="BtnClose08A11_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A11" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,393,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A11" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,393,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A12-->
+        <Label Content="A12气缸" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A12" Content="伸出" HorizontalAlignment="Left" Margin="70,423,0,0" MouseDown="BtnOpen08A12_MouseDown" MouseUp="BtnOpen08A12_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A12" Content="缩回" HorizontalAlignment="Left" Margin="125,423,0,0" MouseDown="BtnClose08A12_MouseDown" MouseUp="BtnClose08A12_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A12" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,423,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A12" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,423,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A13-->
+        <Label Content="A13气缸" HorizontalAlignment="Left" Margin="10,450,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A13" Content="伸出" HorizontalAlignment="Left" Margin="70,453,0,0" MouseDown="BtnOpen08A13_MouseDown" MouseUp="BtnOpen08A13_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A13" Content="缩回" HorizontalAlignment="Left" Margin="125,453,0,0" MouseDown="BtnClose08A13_MouseDown" MouseUp="BtnClose08A13_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A13" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="190,453,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A13" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="220,453,0,0" Stroke="Black" VerticalAlignment="Top"/>
+
+        <!--气缸14-26-->
+        <Label Content="伸出" HorizontalAlignment="Left" Margin="453,65,0,0" VerticalAlignment="Top"/>
+        <Label Content="缩回" HorizontalAlignment="Left" Margin="485,65,0,0" VerticalAlignment="Top"/>
+        <!--A14-->
+        <Label Content="A14气缸" HorizontalAlignment="Left" Margin="280,90,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A14" Content="伸出" HorizontalAlignment="Left" Margin="340,93,0,0" MouseDown="BtnOpen08A14_MouseDown" MouseUp="BtnOpen08A14_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A14" Content="缩回" HorizontalAlignment="Left" Margin="395,93,0,0" MouseDown="BtnClose08A14_MouseDown" MouseUp="BtnClose08A14_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A14" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,93,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A14" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,93,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A15-->
+        <Label Content="A15气缸" HorizontalAlignment="Left" Margin="280,120,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A15" Content="伸出" HorizontalAlignment="Left" Margin="340,123,0,0" MouseDown="BtnOpen08A15_MouseDown" MouseUp="BtnOpen08A15_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A15" Content="缩回" HorizontalAlignment="Left" Margin="395,123,0,0" MouseDown="BtnClose08A15_MouseDown" MouseUp="BtnClose08A15_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A15" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,123,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A15" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,123,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A16-->
+        <Label Content="A16气缸" HorizontalAlignment="Left" Margin="280,150,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A16" Content="伸出" HorizontalAlignment="Left" Margin="340,153,0,0" MouseDown="BtnOpen08A16_MouseDown" MouseUp="BtnOpen08A16_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A16" Content="缩回" HorizontalAlignment="Left" Margin="395,153,0,0" MouseDown="BtnClose08A16_MouseDown" MouseUp="BtnClose08A16_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A16" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,153,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A16" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,153,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A17-->
+        <Label Content="A17气缸" HorizontalAlignment="Left" Margin="280,180,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A17" Content="伸出" HorizontalAlignment="Left" Margin="340,183,0,0" MouseDown="BtnOpen08A17_MouseDown" MouseUp="BtnOpen08A17_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A17" Content="缩回" HorizontalAlignment="Left" Margin="395,183,0,0" MouseDown="BtnClose08A17_MouseDown" MouseUp="BtnClose08A17_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A17" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,183,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A17" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,183,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A18-->
+        <Label Content="A18气缸" HorizontalAlignment="Left" Margin="280,210,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A18" Content="伸出" HorizontalAlignment="Left" Margin="340,213,0,0" MouseDown="BtnOpen08A18_MouseDown" MouseUp="BtnOpen08A18_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A18" Content="缩回" HorizontalAlignment="Left" Margin="395,213,0,0" MouseDown="BtnClose08A18_MouseDown" MouseUp="BtnClose08A18_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A18" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,213,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A18" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,213,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A19-->
+        <Label Content="A19气缸" HorizontalAlignment="Left" Margin="280,240,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A19" Content="伸出" HorizontalAlignment="Left" Margin="340,243,0,0" MouseDown="BtnOpen08A19_MouseDown" MouseUp="BtnOpen08A19_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A19" Content="缩回" HorizontalAlignment="Left" Margin="395,243,0,0" MouseDown="BtnClose08A19_MouseDown" MouseUp="BtnClose08A19_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A19" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,243,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A19" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,243,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A20-->
+        <Label Content="A20气缸" HorizontalAlignment="Left" Margin="280,270,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A20" Content="伸出" HorizontalAlignment="Left" Margin="340,273,0,0" MouseDown="BtnOpen08A20_MouseDown" MouseUp="BtnOpen08A20_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A20" Content="缩回" HorizontalAlignment="Left" Margin="395,273,0,0" MouseDown="BtnClose08A20_MouseDown" MouseUp="BtnClose08A20_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A20" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,273,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A20" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,273,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A21-->
+        <Label Content="A21气缸" HorizontalAlignment="Left" Margin="280,300,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A21" Content="伸出" HorizontalAlignment="Left" Margin="340,303,0,0" MouseDown="BtnOpen08A21_MouseDown" MouseUp="BtnOpen08A21_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A21" Content="缩回" HorizontalAlignment="Left" Margin="395,303,0,0" MouseDown="BtnClose08A21_MouseDown" MouseUp="BtnClose08A21_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A21" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,303,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A21" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,303,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A22-->
+        <Label Content="A22气缸" HorizontalAlignment="Left" Margin="280,330,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A22" Content="伸出" HorizontalAlignment="Left" Margin="340,333,0,0" MouseDown="BtnOpen08A22_MouseDown" MouseUp="BtnOpen08A22_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A22" Content="缩回" HorizontalAlignment="Left" Margin="395,333,0,0" MouseDown="BtnClose08A22_MouseDown" MouseUp="BtnClose08A22_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A22" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,333,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A22" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,333,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A23-->
+        <Label Content="A23气缸" HorizontalAlignment="Left" Margin="280,360,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A23" Content="伸出" HorizontalAlignment="Left" Margin="340,363,0,0" MouseDown="BtnOpen08A23_MouseDown" MouseUp="BtnOpen08A23_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A23" Content="缩回" HorizontalAlignment="Left" Margin="395,363,0,0" MouseDown="BtnClose08A23_MouseDown" MouseUp="BtnClose08A23_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A23" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,363,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A23" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,363,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A24-->
+        <Label Content="A24气缸" HorizontalAlignment="Left" Margin="280,390,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A24" Content="伸出" HorizontalAlignment="Left" Margin="340,393,0,0" MouseDown="BtnOpen08A24_MouseDown" MouseUp="BtnOpen08A24_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A24" Content="缩回" HorizontalAlignment="Left" Margin="395,393,0,0" MouseDown="BtnClose08A24_MouseDown" MouseUp="BtnClose08A24_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A24" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,393,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A24" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,393,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A25-->
+        <Label Content="A25气缸" HorizontalAlignment="Left" Margin="280,420,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A25" Content="伸出" HorizontalAlignment="Left" Margin="340,423,0,0" MouseDown="BtnOpen08A25_MouseDown" MouseUp="BtnOpen08A25_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A25" Content="缩回" HorizontalAlignment="Left" Margin="395,423,0,0" MouseDown="BtnClose08A25_MouseDown" MouseUp="BtnClose08A25_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A25" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,423,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A25" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,423,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <!--A26-->
+        <Label Content="A26气缸" HorizontalAlignment="Left" Margin="280,450,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOpen08A26" Content="伸出" HorizontalAlignment="Left" Margin="340,453,0,0" MouseDown="BtnOpen08A26_MouseDown" MouseUp="BtnOpen08A26_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Button x:Name="btnClose08A26" Content="缩回" HorizontalAlignment="Left" Margin="395,453,0,0" MouseDown="BtnClose08A26_MouseDown" MouseUp="BtnClose08A26_MouseUp" VerticalAlignment="Top" Width="50"/>
+        <Ellipse x:Name="ellOpen08A26" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="460,453,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellClose08A26" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="490,453,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        </Grid>
+
+        <TextBox x:Name="position" HorizontalAlignment="Left" Height="20" Margin="70,500,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="setPosition" HorizontalAlignment="Left" Height="20" Margin="70,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="setSpeed" HorizontalAlignment="Left" Height="20" Margin="70,560,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,502,0,0" TextWrapping="Wrap" Text="当前位置：" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,532,0,0" TextWrapping="Wrap" Text="设定位置：" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,562,0,0" TextWrapping="Wrap" Text="设定速度：" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,502,0,0" TextWrapping="Wrap" Text="mm" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,532,0,0" TextWrapping="Wrap" Text="mm" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="140,562,0,0" TextWrapping="Wrap" Text="mm/s" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="300,502,0,0" TextWrapping="Wrap" Text="伺服准备就绪" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="300,532,0,0" TextWrapping="Wrap" Text="伺服无故障" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="300,562,0,0" TextWrapping="Wrap" Text="伺服运行中" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="300,592,0,0" TextWrapping="Wrap" Text="伺服正极限" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="300,622,0,0" TextWrapping="Wrap" Text="伺服负极限" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="542,498,0,0" TextWrapping="Wrap" Text="伺服原点" VerticalAlignment="Top"/>
+
+        <Button x:Name="btnServoStart" Content="启动" HorizontalAlignment="Left" Margin="210,500,0,0" VerticalAlignment="Top" Width="70" MouseDown="BtnServoStart_MouseDown" MouseUp="BtnServoStart_MouseUp"/>
+        <Button x:Name="btnServoHalt" Content="暂停" HorizontalAlignment="Left" Margin="210,530,0,0" VerticalAlignment="Top" Width="70" MouseDown="BtnServoHalt_MouseDown" MouseUp="BtnServoHalt_MouseUp"/>
+        <Button x:Name="btnServoForward" Content="点动向前" HorizontalAlignment="Left" Margin="210,560,0,0" VerticalAlignment="Top" Width="70" MouseDown="BtnServoForward_MouseDown" MouseUp="BtnServoForward_MouseUp"/>
+        <Button x:Name="btnServoBackward" Content="点动向后" HorizontalAlignment="Left" Margin="210,590,0,0" VerticalAlignment="Top" Width="70" MouseDown="BtnServoBackward_MouseDown" MouseUp="BtnServoBackward_MouseUp"/>
+        <Button x:Name="btnServoGoHome" Content="回原点" HorizontalAlignment="Left" Margin="210,620,0,0" VerticalAlignment="Top" Width="70" MouseDown="BtnServoGoHome_MouseDown" MouseUp="BtnServoGoHome_MouseUp"/>
+        <Button x:Name="btnServoReset" Content="复位" HorizontalAlignment="Left" Margin="433,498,0,0" VerticalAlignment="Top" Width="70" MouseDown="BtnServoReset_MouseDown" MouseUp="BtnServoReset_MouseUp"/>
+
+        <Ellipse x:Name="ellServoReady" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="380,500,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellServoNoFault" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="380,530,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellServoRuning" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="380,560,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellServoForLimit" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="380,590,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellServoBackLimit" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="380,620,0,0" Stroke="Black" VerticalAlignment="Top"/>
+        <Ellipse x:Name="ellServoHomePos" Fill="Gray" HorizontalAlignment="Left" Height="20" Width="20" Margin="613,497,0,0" Stroke="Black" VerticalAlignment="Top"/>
+
+    </Grid>
+    
+   
+
+</Window>

@@ -1,0 +1,22 @@
+﻿<Window x:Class="HMIWindows.WPFLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HMIWindows"
+        mc:Ignorable="d"
+        Title="WPFLogin" Height="450" Width="800" Activated="Window_Activated">
+    <Grid>
+        <Button x:Name="btnLogin" Content="登录" Background="CadetBlue" HorizontalAlignment="Left" Margin="365,301,0,0" VerticalAlignment="Top" Width="70" ClipToBounds="True" Click="BtnLogin_Click"/>
+        <ComboBox x:Name="cmbUserName"  ItemsSource="{Binding LstSource}" SelectedItem="{Binding LstSelect}" HorizontalAlignment="Left" Margin="300,210,0,0" VerticalAlignment="Top" Width="200"/>
+        <PasswordBox x:Name="pwUserPassword" Password="123456" HorizontalAlignment="Left" Height="23" Margin="300,255,0,0"  VerticalAlignment="Top" Width="200"/>
+        <TextBlock HorizontalAlignment="Left" Margin="250,213,0,0" TextWrapping="Wrap" Text="用户：" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="250,258,0,0" TextWrapping="Wrap" Text="密码：" VerticalAlignment="Top"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="Wrap" Text="商务合作邮箱：" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="110,20,0,0" TextWrapping="Wrap" Text="zlqss@hotmail.com" Background="LawnGreen" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,45,0,0" TextWrapping="Wrap" Text="BY:小航哥" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,65,0,0" TextWrapping="Wrap" Text="侵权必究！！" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
